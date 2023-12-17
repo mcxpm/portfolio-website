@@ -11,6 +11,8 @@ export default function Experiences() {
   const theme = useTheme();
   return (
     <Stack
+      component="section"
+      id="experiences"
       alignItems="center"
       mt={15}
       sx={{
@@ -21,7 +23,6 @@ export default function Experiences() {
     >
       <Typography
         variant="header1"
-        id="experiences"
         className="hoverTranslate"
         mb={8}
         sx={{

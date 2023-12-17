@@ -19,6 +19,7 @@ export default function ProjectCard(props) {
   return (
     <Box
       sx={{
+        component: "section",
         border: "solid 1px rgba(0, 0, 0, 0.1)",
         padding: "1.5rem 2rem",
         borderRadius: "2rem",

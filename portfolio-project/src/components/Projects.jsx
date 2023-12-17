@@ -16,6 +16,8 @@ export default function Example() {
   const theme = useTheme();
   return (
     <Stack
+      component="section"
+      id="projects"
       mt={15}
       sx={{
         [theme.breakpoints.down("tablet")]: {
@@ -25,7 +27,6 @@ export default function Example() {
     >
       <Typography
         variant="header1"
-        id="projects"
         alignSelf="center"
         mb={8}
         sx={{

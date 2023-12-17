@@ -15,9 +15,10 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "@mui/icons-material/Menu";
 import { useTheme } from "@emotion/react";
+import CloseIcon from "@mui/icons-material/Close";
 
 const drawerLength = 240;
 const listItems = ["About", "Experiences", "Projects", "Skills", "Contact"];
@@ -28,7 +29,7 @@ export default function NavBar() {
   const theme = useTheme();
   const [isDarkMode, setDarkMode] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const [curSection, setCurSection] = useState(0);
+  const [curSection, setCurSection] = useState("About");
 
   const handleDrawerToggle = () => {
     setDrawerOpen((prevState) => !prevState);
@@ -42,15 +43,46 @@ export default function NavBar() {
     if (sectionElement) {
       const headerOffset = 100; // Set the offset value
       const elementPosition = sectionElement.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
     }
+    setCurSection(item);
   };
+
+  const handleButtonClick = (item) => {
+    handleScrollSection(item);
+    setCurSection(item);
+  };
+
+  // Match navlink with scroll
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const sections = document.querySelectorAll("section");
+  //     const scrollPosition = window.scrollY + 100; // Offset value
+
+  //     // Find the current section based on the scroll position
+  //     for (let i = sections.length - 1; i >= 0; i--) {
+  //       const section = sections[i];
+  //       const sectionTop = section.offsetTop;
+
+  //       if (scrollPosition >= sectionTop) {
+  //         const sectionId = section.id.toLowerCase();
+  //         setCurSection(sectionId);
+  //         break;
+  //       }
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -62,7 +94,12 @@ export default function NavBar() {
         {listItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{
+                textAlign: "center",
+                transform: item === curSection ? "translateY(-3px)" : "none",
+                textDecoration: item === curSection ? "underline" : "none",
+                color: item === curSection ? "primary.main" : "#000",
+              }}
               onClick={() => handleScrollSection(item)}
             >
               <ListItemText primary={item} />
@@ -107,8 +144,15 @@ export default function NavBar() {
                   {listItems.map((item) => (
                     <Button
                       key={item}
-                      sx={{ color: "#000", fontWeight: "500" }}
-                      onClick={() => handleScrollSection(item)}
+                      sx={{
+                        color: item === curSection ? "primary.main" : "#000",
+                        fontWeight: "500",
+                        transform:
+                          item === curSection ? "translateY(-3px)" : "none",
+                        textDecoration:
+                          item === curSection ? "underline" : "none",
+                      }}
+                      onClick={() => handleButtonClick(item)}
                       fontWeight={theme.typography.fontWeightLight}
                     >
                       {item}
@@ -126,9 +170,14 @@ export default function NavBar() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ m: 1, position: "fixed", bgcolor: "white", zIndex: 9999 }}
+            sx={{
+              m: 1,
+              position: "fixed",
+              bgcolor: "white",
+              zIndex: 9999,
+            }}
           >
-            <Menu />
+            {isDrawerOpen ? <CloseIcon /> : <Menu />}
           </IconButton>
         </>
       )}
