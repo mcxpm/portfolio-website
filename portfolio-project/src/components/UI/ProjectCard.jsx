@@ -6,13 +6,14 @@ import {
   Divider,
   Button,
   Grid,
+  useTheme,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export default function ProjectCard(props) {
   const { title, description, tag, imgSrc, live, repo } = props.data;
-
+  const theme = useTheme();
   const handleRedirect = (link) => {
     window.open(link);
   };
@@ -21,16 +22,21 @@ export default function ProjectCard(props) {
       sx={{
         component: "section",
         border: "solid 1px rgba(0, 0, 0, 0.1)",
-        padding: "1.5rem 2rem",
+        padding: "2rem",
         borderRadius: "2rem",
-        mb: "0.5rem",
-        transition: "300ms",
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
         bgcolor: "rgb(244,244,244)",
       }}
     >
       <Box mb={1}>
-        <Typography variant="h6">{title}</Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            [theme.breakpoints.up("md")]: {},
+          }}
+        >
+          {title}
+        </Typography>
       </Box>
       <Stack>
         <Box
@@ -42,10 +48,9 @@ export default function ProjectCard(props) {
             width: "100%",
             height: "auto",
             objectFit: "cover",
-            border: "solid 1px rgba(0, 0, 0, 0.1)",
+            border: "solid 1px rgba(0, 0, 0, 0.3)",
             borderRadius: "1rem",
             mb: "1rem",
-            // minHeight: "150px",
           }}
         />
       </Stack>

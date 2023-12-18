@@ -1,7 +1,6 @@
 // import Stack from "@mui/material/Stack";
 // import Box from "@mui/material/Box";
 import {
-  Container,
   Box,
   Stack,
   Typography,
@@ -153,11 +152,11 @@ export default function Socials() {
                 sx={{ fontWeight: theme.typography.fontWeightBold }}
                 color="secondary.main"
               >
-                3+
+                1+
               </Typography>
               <DevicesTwoToneIcon />
             </Stack>
-            <Typography>Years Coding</Typography>
+            <Typography>Years Experience</Typography>
           </Box>
 
           <Box>
@@ -168,7 +167,7 @@ export default function Socials() {
                 sx={{ fontWeight: theme.typography.fontWeightBold }}
                 color="secondary.main"
               >
-                7+
+                4+
               </Typography>
               <FactCheckTwoToneIcon />
             </Stack>

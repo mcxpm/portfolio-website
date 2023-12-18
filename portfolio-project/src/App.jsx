@@ -4,18 +4,25 @@ import Socials from "./components/Socials";
 import Experiences from "./components/Experience";
 import Example from "./components/Projects";
 import { Container } from "@mui/material";
+import FullWidthTabs from "./components/Skills";
+import FadeInSection from "./components/UI/FadeSection";
 
 function App() {
-
   return (
     <Container maxWidth="xl" justifyContent="center">
       <NavBar></NavBar>
-      <Socials></Socials>
-      {/* <Projects></Projects> */}
+      <FadeInSection>
+        <Socials></Socials>
+      </FadeInSection>
       <Experiences></Experiences>
       <Container maxWidth="lg">
-        <Example></Example>
+        <FadeInSection>
+          <Example></Example>
+        </FadeInSection>
       </Container>
+      <FadeInSection>
+        <FullWidthTabs></FullWidthTabs>
+      </FadeInSection>
     </Container>
   );
 }

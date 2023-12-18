@@ -63,3 +63,23 @@ export const carouselItems = [
     repo: "",
   },
 ];
+
+export const skillsData = [
+  {
+    id: 0,
+    title: "Frontend",
+    tags: ["React.js", "Next.js", "Angular", "Material UI"],
+    level: ["Expreienced", "Basic", "Basic", "Experienced"],
+  },
+  {
+    id: 1,
+    title: "Backend",
+    tags: ["Node.js", "Express.js", "Git", "PostgreSQL"],
+    level: ["Expreienced", "Intermediate", "Experienced", "Basic"],
+  },
+  {
+    id: 2,
+    title: "Things I'm learning",
+    tags: ["Flutter", "AI", "AWS"],
+  },
+];

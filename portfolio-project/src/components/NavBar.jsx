@@ -13,9 +13,8 @@ import {
   Drawer,
   Container,
 } from "@mui/material";
-import PropTypes from "prop-types";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Menu from "@mui/icons-material/Menu";
 import { useTheme } from "@emotion/react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -27,7 +26,7 @@ const listItems = ["About", "Experiences", "Projects", "Skills", "Contact"];
 //TODO - Add darkmode functionality - incl save preferences etc
 export default function NavBar() {
   const theme = useTheme();
-  const [isDarkMode, setDarkMode] = useState(false);
+  // const [isDarkMode, setDarkMode] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [curSection, setCurSection] = useState("About");
 

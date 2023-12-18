@@ -2,7 +2,7 @@ import { useTheme } from "@emotion/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Stack, IconButton, Typography } from "@mui/material";
-import ProjectCard from "./Projects/ProjectCard";
+import ProjectCard from "./UI/ProjectCard";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { carouselItems } from "../utils/data";
@@ -51,15 +51,6 @@ export default function Example() {
           grabCursor={true}
           spaceBetween={50}
           loop={true}
-          breakpoints={{
-            576: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 48,
-            },
-          }}
           pagination={{
             clickable: true,
           }}
