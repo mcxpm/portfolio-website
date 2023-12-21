@@ -26,7 +26,7 @@ export default function Example() {
       }}
     >
       <Typography
-        variant="header1"
+        variant="h4"
         alignSelf="center"
         mb={8}
         sx={{

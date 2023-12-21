@@ -63,7 +63,7 @@ export default function FullWidthTabs() {
       }}
     >
       <Typography
-        variant="header1"
+        variant="h4"
         alignSelf="center"
         mb={8}
         sx={{

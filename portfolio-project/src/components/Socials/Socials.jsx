@@ -166,7 +166,7 @@ export default function Socials() {
           endIcon={<EmailOutlinedIcon />}
           onClick={handleEmailRedirect}
         >
-          <Typography variant="description1">Contact Me</Typography>
+          <Typography variant="description1">Email Me</Typography>
         </Button>
       </Stack>
 
@@ -186,6 +186,7 @@ export default function Socials() {
             iconName={item.icon}
             link={item.link}
             key={index}
+            title={item.title}
           ></SocialButtons>
         ))}
       </Stack>

@@ -22,8 +22,7 @@ export default function Experiences() {
       }}
     >
       <Typography
-        variant="header1"
-        className="hoverTranslate"
+        variant="h4"
         mb={8}
         sx={{
           [theme.breakpoints.down("sm")]: {
