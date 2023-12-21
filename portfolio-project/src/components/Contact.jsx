@@ -173,17 +173,17 @@ export default function ContactForm() {
             </Button>
           </form>
         </Box>
+        <Snackbar
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        >
+          <SnackbarAlert onClose={handleClose} severity={stat}>
+            {alertMessage}
+          </SnackbarAlert>
+        </Snackbar>
       </Stack>
-      {/* <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-      >
-        <SnackbarAlert onClose={handleClose} severity={stat}>
-          {alertMessage}
-        </SnackbarAlert>
-      </Snackbar> */}
     </>
   );
 }
