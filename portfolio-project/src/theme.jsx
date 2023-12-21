@@ -16,7 +16,7 @@ const theme = createTheme({
       xs: 0,
       sm: 600,
       tablet: 640,
-      tmp: 750,
+      inBetw: 750,
       md: 900,
       hard: 940,
       lg: 1200,

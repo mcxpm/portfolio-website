@@ -2,10 +2,10 @@ import { useTheme } from "@emotion/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Stack, IconButton, Typography } from "@mui/material";
-import ProjectCard from "./UI/ProjectCard";
+import ProjectCard from "./ProjectCard";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { carouselItems } from "../utils/data";
+import { carouselItems } from "../../utils/data";
 
 import "swiper/css";
 import "swiper/css/navigation";

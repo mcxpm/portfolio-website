@@ -10,8 +10,8 @@ import {
   Box,
   useTheme,
 } from "@mui/material";
-import { skillsData } from "../utils/data";
-import SkillsCard from "./UI/SkillsCard";
+import { skillsData } from "../../utils/data";
+import SkillsCard from "./SkillsCard";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -38,13 +38,6 @@ TabPanel.propTypes = {
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
 };
-
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
 
 export default function FullWidthTabs() {
   const theme = useTheme();
@@ -94,9 +87,6 @@ export default function FullWidthTabs() {
             {skillsData.map((item, index) => (
               <Tab label={item.title} key={index} />
             ))}
-            {/* <Tab label="Item One" {...a11yProps(0)} />
-            <Tab label="Item Two" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} /> */}
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -111,21 +101,9 @@ export default function FullWidthTabs() {
               dir={theme.direction}
               key={index}
             >
-              {item.tags.map((tag, ind) => (
-                <Typography key={ind}>{tag}</Typography>
-              ))}
+              <SkillsCard data={item}></SkillsCard>
             </TabPanel>
           ))}
-
-          {/* <TabPanel value={value} index={0} dir={theme.direction}>
-            Item One
-          </TabPanel>
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            Item Two
-          </TabPanel>
-          <TabPanel value={value} index={2} dir={theme.direction}>
-            Item Three
-          </TabPanel> */}
         </SwipeableViews>
       </Box>
     </Stack>

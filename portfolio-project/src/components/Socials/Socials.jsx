@@ -12,37 +12,13 @@ import DevicesTwoToneIcon from "@mui/icons-material/DevicesTwoTone";
 import FactCheckTwoToneIcon from "@mui/icons-material/FactCheckTwoTone";
 import WorkOffTwoToneIcon from "@mui/icons-material/WorkOffTwoTone";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import { ref, getDownloadURL } from "firebase/storage";
-import { storage } from "../config/firebase";
-import { useState, useEffect } from "react";
+import SocialButtons from "./SocialButtons";
+import { useSocialData } from "../../hooks/useSocialData";
 // import TimeSpent from "./TimeSpent.jsx";
 
 export default function Socials() {
   const theme = useTheme();
-
-  const storageRef = ref(storage, "documents/CVFinal - Copy.pdf");
-  const [resumeUrl, setResumeUrl] = useState();
-
-  useEffect(() => {
-    getDownloadURL(storageRef)
-      .then((url) => setResumeUrl(url))
-      .catch((e) => {
-        console.log(`Error fetching resume from Firebase:\n${e.message}`);
-      });
-  }, [storageRef]);
-
-  const redirectToGithub = () => {
-    window.open("https://www.github.com/mcxpm");
-  };
-
-  const redirectToLinkedIn = () => {
-    window.open("https://www.linkedin.com/in/markus-lim-en-cheng/");
-  };
-
-  const downloadResume = () => {
-    window.open(resumeUrl, "_blank");
-  };
-
+  const socialData = useSocialData();
   const handleEmailRedirect = () => {
     window.location.href =
       "mailto:markuslec@gmail.com?subject=Portfolio%20Query";
@@ -135,14 +111,9 @@ export default function Socials() {
 
         <Stack
           direction="row"
-          justifyContent="space-between"
+          justifyContent={{ xs: "space-around", inBetw: "space-between" }}
           mt={5}
           mb={3}
-          sx={{
-            [theme.breakpoints.down("tmp")]: {
-              mr: "2rem",
-            },
-          }}
         >
           <Box>
             <Stack direction="row" alignItems="center">
@@ -174,7 +145,7 @@ export default function Socials() {
             <Typography>Projects Built</Typography>
           </Box>
 
-          <Box sx={{ display: { xs: "none", sm: "none", tmp: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "none", inBetw: "block" } }}>
             <Stack direction="row" alignItems="center">
               <Typography
                 variant="h4"
@@ -219,7 +190,14 @@ export default function Socials() {
           },
         }}
       >
-        <Box
+        {socialData.map((item, index) => (
+          <SocialButtons
+            iconName={item.icon}
+            link={item.link}
+            key={index}
+          ></SocialButtons>
+        ))}
+        {/* <Box
           component="img"
           sx={{
             height: 24,
@@ -251,7 +229,7 @@ export default function Socials() {
           alt="Download Resume"
           src="/assets/download-pdf.png"
           onClick={downloadResume}
-        ></Box>
+        ></Box> */}
       </Stack>
     </Stack>
   );
