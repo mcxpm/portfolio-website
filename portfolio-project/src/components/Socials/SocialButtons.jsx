@@ -21,7 +21,6 @@ export default function SocialButtons(props) {
         sx={{
           height: 24,
           width: 24,
-          cursor: "pointer",
           color: "black",
         }}
         onClick={redirectToLink}

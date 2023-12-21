@@ -134,7 +134,12 @@ export default function NavBar() {
               alignItems="center"
             >
               <Stack>
-                <Typography variant="h6" gutterBottom>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  onClick={() => handleButtonClick("about")}
+                  sx={{ cursor: "pointer" }}
+                >
                   Mcxpm
                 </Typography>
               </Stack>
