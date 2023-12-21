@@ -1,5 +1,3 @@
-// import Stack from "@mui/material/Stack";
-// import Box from "@mui/material/Box";
 import {
   Box,
   Stack,
@@ -14,7 +12,6 @@ import WorkOffTwoToneIcon from "@mui/icons-material/WorkOffTwoTone";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import SocialButtons from "./SocialButtons";
 import { useSocialData } from "../../hooks/useSocialData";
-// import TimeSpent from "./TimeSpent.jsx";
 
 export default function Socials() {
   const theme = useTheme();
@@ -50,12 +47,7 @@ export default function Socials() {
         </Stack>
       )}
 
-      <Stack
-        px={marginx}
-        pt={marginy}
-        // alignSelf="center"
-        // mt={-50}d
-      >
+      <Stack px={marginx} pt={marginy}>
         <Stack direction="row" alignItems="center">
           <Typography fontSize={30} mr={1}>
             Hi{" "}
@@ -182,7 +174,6 @@ export default function Socials() {
         spacing={4}
         pt={40}
         display="flex"
-        // alignItems="center"
         ml="auto"
         sx={{
           [theme.breakpoints.down("sm")]: {
@@ -197,39 +188,6 @@ export default function Socials() {
             key={index}
           ></SocialButtons>
         ))}
-        {/* <Box
-          component="img"
-          sx={{
-            height: 24,
-            width: 24,
-            cursor: "pointer",
-          }}
-          alt="LinkedIn Profile"
-          src="/assets/linkedin-logo-icon-social-media-symbol-vector-21679685.jpg"
-          onClick={redirectToLinkedIn}
-        ></Box>
-        <Box
-          component="img"
-          sx={{
-            height: 24,
-            width: 24,
-            cursor: "pointer",
-          }}
-          alt="Github Profile"
-          src="/assets/github-mark/github-mark.png"
-          onClick={redirectToGithub}
-        ></Box>
-        <Box
-          component="img"
-          sx={{
-            height: 20,
-            width: 20,
-            cursor: "pointer",
-          }}
-          alt="Download Resume"
-          src="/assets/download-pdf.png"
-          onClick={downloadResume}
-        ></Box> */}
       </Stack>
     </Stack>
   );

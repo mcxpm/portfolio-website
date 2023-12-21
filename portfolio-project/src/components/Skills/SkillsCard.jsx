@@ -26,8 +26,8 @@ export default function SkillsCard(props) {
     >
       <Stack
         direction={{
-          xs: "column", // for smaller than md
-          inBetw: "row", // for md and larger
+          xs: "column", 
+          inBetw: "row", 
         }}
         justifyContent="space-around"
         alignItems="center"
