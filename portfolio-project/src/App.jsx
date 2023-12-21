@@ -3,9 +3,11 @@ import Socials from "./components/Socials/Socials";
 // import Projects from "./components/Projects";
 import Experiences from "./components/Experience";
 import Example from "./components/Projects/Projects";
-import { Container } from "@mui/material";
+import { Container, Fade } from "@mui/material";
 import FullWidthTabs from "./components/Skills/Skills";
 import FadeInSection from "./components/UI/FadeSection";
+import Contact from "./components/Contact";
+import ContactForm from "./components/Contact";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
       </Container>
       <FadeInSection>
         <FullWidthTabs></FullWidthTabs>
+      </FadeInSection>
+      <FadeInSection>
+        <ContactForm></ContactForm>
       </FadeInSection>
     </Container>
   );
