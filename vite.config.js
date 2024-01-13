@@ -6,6 +6,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ["@emotion/react", "@emotion/styled", "@mui/material/Tooltip"],
   },
+  base: "/",
   plugins: [
     react({
       jsxImportSource: "@emotion/react",
