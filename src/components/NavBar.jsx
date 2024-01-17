@@ -123,7 +123,7 @@ export default function NavBar() {
               backgroundColor: "white",
               width: "100vw",
               top: 0,
-              borderBottom: "1.5px solid #000",
+              // borderBottom: "1.5px solid #000",
             }}
             alignItems="center"
           >
