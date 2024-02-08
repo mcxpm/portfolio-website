@@ -40,7 +40,7 @@ export const carouselItems = [
     description:
       "Web application for users to plan and browse a catalogue of dates. Built with Vite using Mantine UI.",
     tag: ["React.js", "Firebase", "Maps API"],
-    imgSrc: "/assets/carouselItems/thumbnail.png",
+    imgSrc: "/assets/CarouselItems/thumbnail.png",
     live: "",
     repo: "https://github.com/mcxpm/DateGoWhere",
   },
@@ -49,7 +49,7 @@ export const carouselItems = [
     description:
       "Mobile-first site that helps track overstayers, equipped with OpenAI API with further plans to integrate Azure's Document Intelligence",
     tag: ["React.js", "Firebase", "OpenAI"],
-    imgSrc: "/assets/carouselItems/RentSG_Picture.png",
+    imgSrc: "/assets/CarouselItems/RentSG_Picture.png",
     live: "https://rentsg.vercel.app/",
     repo: "https://github.com/RyanLauQF/RentSG",
   },
@@ -58,7 +58,7 @@ export const carouselItems = [
     description:
       "Full Stack web application that stores waffle places and allows users to rate them.",
     tag: ["Node.js", "MongoDB", "Express"],
-    imgSrc: "/assets/carouselItems/waffPlace.png",
+    imgSrc: "/assets/CarouselItems/waffPlace.png",
     live: "",
     repo: "",
   },
