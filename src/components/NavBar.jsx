@@ -20,7 +20,7 @@ import { useTheme } from "@emotion/react";
 import CloseIcon from "@mui/icons-material/Close";
 
 const drawerLength = 240;
-const listItems = ["About", "Experiences", "Projects", "Skills", "Contact"];
+const listItems = ["Home", "About", "Experiences", "Projects", "Contact"];
 
 //TODO - Add scroll functionality
 //TODO - Add darkmode functionality - incl save preferences etc
@@ -28,7 +28,7 @@ export default function NavBar() {
   const theme = useTheme();
   // const [isDarkMode, setDarkMode] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const [curSection, setCurSection] = useState("About");
+  const [curSection, setCurSection] = useState("Home");
 
   const handleDrawerToggle = () => {
     setDrawerOpen((prevState) => !prevState);
@@ -138,7 +138,7 @@ export default function NavBar() {
                 <Typography
                   variant="h6"
                   gutterBottom
-                  onClick={() => handleButtonClick("about")}
+                  onClick={() => handleButtonClick("home")}
                   sx={{ cursor: "pointer" }}
                 >
                   Mcxpm

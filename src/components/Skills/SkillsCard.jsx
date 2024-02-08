@@ -1,16 +1,9 @@
-import {
-  Box,
-  Typography,
-  Stack,
-  Grid,
-  Container,
-  useTheme,
-} from "@mui/material";
+/* eslint-disable react/prop-types */
+import { Box, Stack } from "@mui/material";
 import Item from "../UI/Item";
 
 export default function SkillsCard(props) {
-  const { id, title, tags, level, imgUrl } = props.data;
-  const theme = useTheme();
+  const { tags, level, imgUrl } = props.data;
   return (
     <Box
       sx={{
@@ -26,8 +19,8 @@ export default function SkillsCard(props) {
     >
       <Stack
         direction={{
-          xs: "column", 
-          inBetw: "row", 
+          xs: "column",
+          inBetw: "row",
         }}
         justifyContent="space-around"
         alignItems="center"

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IconButton, Tooltip } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";

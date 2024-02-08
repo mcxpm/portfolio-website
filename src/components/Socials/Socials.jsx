@@ -26,7 +26,14 @@ export default function Socials() {
   const marginy = matches ? 20 : 8;
 
   return (
-    <Stack component="section" direction="row" spacing={2} id="about">
+    <Stack
+      component="section"
+      direction="row"
+      spacing={2}
+      id="about"
+      alignItems="center"
+      justifyContent="space-between"
+    >
       {matches && (
         <Stack pt={{ md: 25, lg: 20 }}>
           <Box
@@ -78,7 +85,8 @@ export default function Socials() {
         </Stack>
 
         <Typography
-          fontSize={23}
+          fontSize={20}
+          textAlign="center"
           mt={2}
           sx={{
             [theme.breakpoints.down("sm")]: {
@@ -88,7 +96,7 @@ export default function Socials() {
         >
           Software Engineer, Problem Solver
         </Typography>
-        <Stack textAlign="justify">
+        {/* <Stack textAlign="justify">
           <Typography mt={4}>
             I am a driven second-year undergraduate enrolled in the Renaissance
             Engineering Programme at Nanyang Technological University. My
@@ -113,7 +121,7 @@ export default function Socials() {
             I look forward to the opportunity to bring my skills to your next
             project!
           </Typography>
-        </Stack>
+        </Stack> */}
 
         <Stack
           direction="row"
@@ -164,9 +172,7 @@ export default function Socials() {
               <WorkOffTwoToneIcon />
             </Stack>
             <Typography>Awards</Typography>
-            <Typography sx={{ fontSize: "12px" }}>
-              (More to come)
-            </Typography>
+            <Typography sx={{ fontSize: "12px" }}>(More to come)</Typography>
           </Box>
         </Stack>
         <Button
@@ -186,7 +192,7 @@ export default function Socials() {
 
       <Stack
         spacing={4}
-        pt={40}
+        pt={10}
         display="flex"
         ml="auto"
         sx={{

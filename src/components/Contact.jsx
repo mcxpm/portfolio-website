@@ -8,6 +8,7 @@ import {
   useTheme,
   Snackbar,
   Alert,
+  Container,
 } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import SocialButtons from "./Socials/SocialButtons";
@@ -70,30 +71,6 @@ export default function ContactForm() {
     }
   };
 
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-
-  //     emailjs
-  //       .sendForm(
-  //         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  //         form.current,
-  //         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  //       )
-  //       .then(
-  //         (result) => {
-  //           console.log(result);
-  //           console.log(result.status);
-  //           setName("");
-  //           setEmail("");
-  //           setMessage("");
-  //         },
-  //         (error) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //   };
-
   return (
     <>
       <Stack
@@ -101,7 +78,7 @@ export default function ContactForm() {
         id="contact"
         alignItems="center"
         my={8}
-        p={10}
+        // p={10}
         sx={{
           [theme.breakpoints.down("tablet")]: {
             mt: "3rem",
@@ -119,105 +96,113 @@ export default function ContactForm() {
         >
           Contact Me
         </Typography>
-        <Stack
-          direction={{ xs: "column", md: "row" }}
-          width="100%"
-          justifyContent="space-between"
-        >
+        <Container maxWidth="lg">
           <Stack
-            maxWidth="40%"
-            sx={{
-              [theme.breakpoints.down("md")]: {
-                maxWidth: "100%",
-                textAlign: "center",
-              },
-            }}
+            direction={{ xs: "column", md: "row" }}
+            width="100%"
+            justifyContent="space-between"
           >
-            <Typography variant="h6" fontWeight={500} mb={1}>
-              Let's Connect
-            </Typography>
-            <Typography>
-              I'm currently looking for new opportunities and my inbox is always
-              open. Whether you have a question or just want to say hi, I'll try
-              my best to get back to you!
-            </Typography>
             <Stack
-              direction="row"
-              justifyContent={{ xs: "center", md: "left" }}
-              mb={2}
+              maxWidth="40%"
+              sx={{
+                [theme.breakpoints.down("md")]: {
+                  maxWidth: "100%",
+                  textAlign: "center",
+                },
+              }}
             >
-              {socialData.map((item, index) => (
-                <SocialButtons
-                  iconName={item.icon}
-                  link={item.link}
-                  key={index}
-                  title={item.title}
-                  placement="bottom"
-                  size={60}
-                  color="black"
-                  fontSize="large"
-                ></SocialButtons>
-              ))}
-            </Stack>
-          </Stack>
-          <Box
-            sx={{
-              display: "flex",
-              // alignItems: "center",
-              maxWidth: 600,
-              // mx: "auto",
-              p: 2,
-              border: "1px solid rgba(0,0,0, 0.2)",
-              borderRadius: "1rem",
-              boxShadow: 2,
-            }}
-          >
-            <form onSubmit={handleSubmit} ref={form}>
-              <TextField
-                fullWidth
-                label="Name"
-                value={name}
-                name="from_name"
-                onChange={(e) => setName(e.target.value)}
-                margin="normal"
-                required
-              />
-              <TextField
-                fullWidth
-                label="Email"
-                value={email}
-                name="user_email"
-                onChange={(e) => setEmail(e.target.value)}
-                margin="normal"
-                required
-                type="email"
-              />
-              <TextField
-                fullWidth
-                label="Message"
-                value={message}
-                name="message"
-                onChange={(e) => setMessage(e.target.value)}
-                margin="normal"
-                required
-                multiline
-                rows={4}
-              />
-              <Button
-                fullWidth
-                type="submit"
-                variant="contained"
-                sx={{
-                  mt: 2,
-                  backgroundColor: "primary.main",
-                  color: "#fff",
-                }}
+              <Typography
+                variant="h6"
+                fontWeight={500}
+                mb={1}
+                textAlign="center"
               >
-                Submit
-              </Button>
-            </form>
-          </Box>
-        </Stack>
+                Let's Connect
+              </Typography>
+              <Typography>
+                I'm currently looking for new opportunities and my inbox is
+                always open. Do not hestitate to email and I'll try my best to
+                get back to you!
+              </Typography>
+              <Stack
+                direction="row"
+                justifyContent={{ xs: "center", md: "left" }}
+                mb={2}
+              >
+                {socialData.map((item, index) => (
+                  <SocialButtons
+                    iconName={item.icon}
+                    link={item.link}
+                    key={index}
+                    title={item.title}
+                    placement="bottom"
+                    size={60}
+                    color="black"
+                    fontSize="large"
+                  ></SocialButtons>
+                ))}
+              </Stack>
+            </Stack>
+            <Box
+              sx={{
+                display: "flex",
+                // alignItems: "center",
+                maxWidth: 500,
+                // minWidth: 300,
+                // mx: "auto",
+                p: 2,
+                border: "1px solid rgba(0,0,0, 0.2)",
+                borderRadius: "1rem",
+                boxShadow: 2,
+              }}
+            >
+              <form onSubmit={handleSubmit} ref={form}>
+                <TextField
+                  fullWidth
+                  label="Name"
+                  value={name}
+                  name="from_name"
+                  onChange={(e) => setName(e.target.value)}
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Email"
+                  value={email}
+                  name="user_email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  margin="normal"
+                  required
+                  type="email"
+                />
+                <TextField
+                  fullWidth
+                  label="Message"
+                  value={message}
+                  name="message"
+                  onChange={(e) => setMessage(e.target.value)}
+                  margin="normal"
+                  required
+                  multiline
+                  rows={4}
+                />
+                <Button
+                  fullWidth
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    mt: 2,
+                    backgroundColor: "primary.main",
+                    color: "#fff",
+                  }}
+                >
+                  Submit
+                </Button>
+              </form>
+            </Box>
+          </Stack>
+        </Container>
 
         <Snackbar
           open={open}

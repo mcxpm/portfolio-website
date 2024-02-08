@@ -5,7 +5,7 @@ const theme = createTheme({
 
   palette: {
     primary: {
-      main: "#00897b",
+      main: "#2196f3",
     },
     secondary: {
       main: "#0277bd", // light blue
@@ -40,6 +40,7 @@ const theme = createTheme({
     header1: {
       lineHeight: 1,
       fontSize: "2.1rem",
+      fontFamily: "Segoe UI",
       fontWeight: "500",
     },
     descriptions: {
