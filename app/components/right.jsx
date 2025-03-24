@@ -9,10 +9,10 @@ export default function About() {
     <Container>
       <Box
         sx={{
-          width: "55%",
-          marginLeft: "45%",
+          width: { xs: "100%", md: "55%" },
+          marginLeft: { xs: "0", md: "45%" },
           overflow: "visible",
-          pt: 10,
+          pt: { xs: 2, md: 10 },
         }}
       >
         <Box display="flex" alignItems="center" gap={1}>

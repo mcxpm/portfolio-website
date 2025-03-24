@@ -12,8 +12,15 @@ import ContactForm from "./contactform";
 
 export default function Intro() {
   return (
-    <Container sx={{ position: "fixed", height: "100vh" }}>
-      <Box sx={{ width: "40%", pt: 10 }}>
+    <Container
+      sx={{
+        position: { xs: "static", md: "fixed" },
+        height: { xs: "auto", md: "100vh" },
+        width: { xs: "100%", md: "auto" },
+        mb: { xs: 4, md: 0 },
+      }}
+    >
+      <Box sx={{ width: { xs: "100%", md: "40%" }, pt: 10 }}>
         <Stack direction="column" spacing={1}>
           <Typography variant="h3" gutterBottom sx={{ fontWeight: "bold" }}>
             Markus Lim
@@ -28,7 +35,7 @@ export default function Intro() {
           </Typography>
         </Stack>
       </Box>
-      <Box sx={{ width: "40%" }}>
+      <Box sx={{ width: { xs: "100%", md: "40%" } }}>
         <Stack direction="row" justifyContent="center" sx={{ mt: 2 }}>
           <SocialButtons
             iconName="LinkedInIcon"
